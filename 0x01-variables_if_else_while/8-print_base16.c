@@ -16,7 +16,9 @@ int main(void)
 		(c < 10 && d <= 'f')
 		{
 			putchar(c + '0');
+			c++;
 			putchar(d);
+			d++;
 		}
 	putchar('\n');
 	return (0);
