@@ -13,10 +13,14 @@ int main(void)
 	c = 0;
 	d = 'a';
 	while
-		(c < 10 && d <= 'f')
+		(c < 10)
 		{
 			putchar(c + '0');
 			c++;
+		}
+	while
+		(d <= 'f')
+		{
 			putchar(d);
 			d++;
 		}
