@@ -12,6 +12,7 @@ void more_numbers(void)
 	while (n <= 14)
 	{
 		m *= 10;
+		n++;
 		_putchar(m);
 	}
 	_putchar('\n');
