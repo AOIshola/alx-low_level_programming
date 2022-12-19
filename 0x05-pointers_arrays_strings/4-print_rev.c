@@ -4,8 +4,8 @@
 /**
  * print_rev - print a string in reverse
  * @s: pointer argument
- * Return: Always 0 (Success)
- */
+ *Return: Always 0 (Success)
+ */ 
 
 void print_rev(char *s)
 {
@@ -20,5 +20,6 @@ void print_rev(char *s)
 	{
 		_putchar(s[j]);
 	}
+
 	_putchar('\n');
 }
