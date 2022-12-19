@@ -3,7 +3,7 @@
 
 /**
  * _puts - prints a string followed by a newline
- * @str: pointer that points to a char datatype
+ * @str: pointer argument
  * Return: Always 0 (Success)
  */
 
