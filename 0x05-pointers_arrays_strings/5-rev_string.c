@@ -4,7 +4,6 @@
 /**
  * rev_string - reverse a string
  * @s: pointer argument
- * Return: SUCCESS
  */
 
 void rev_string(char *s)
