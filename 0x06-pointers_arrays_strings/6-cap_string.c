@@ -12,6 +12,10 @@ char *cap_string(char *str);
 
 	while (str[length] != '\0')
 	{
+		if (str[0] >= 97 && str[0] <= 122)
+		{
+			str[0] = str[0] - 32;
+		}
 		if (str[length] == ' ' || str[length] == '\t' || str[length] ==
 				'\n' || str[length] == ',' || str[length] == '.'
 				|| str[length] == ';' || str[length] == '!' ||
