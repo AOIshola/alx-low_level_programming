@@ -7,9 +7,9 @@
 char *leet(char *str)
 {
 	int length = 0, n;
-	int lower[] = {97, 101, 111, 116, 108}
-	int caps[] = {65, 69, 79, 84, 76}
-	int code[] = {52, 51, 48, 55, 49}
+	int lower[] = {97, 101, 111, 116, 108};
+	int caps[] = {65, 69, 79, 84, 76};
+	int code[] = {52, 51, 48, 55, 49};
 
 	while (*(str + length) != '\0')
 	{
