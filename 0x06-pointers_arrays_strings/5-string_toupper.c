@@ -5,7 +5,7 @@
  * Return: char
  */
 
-char *string_toupper(char *str);
+char *string_toupper(char *str)
 {
 	int length = 0;
 
