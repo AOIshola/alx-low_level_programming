@@ -1,4 +1,6 @@
 #include "variadic_functions.h"
+#include <stdio.h>
+#include <stdarg.h>
 
 /**
  * print_all - prints all
@@ -8,11 +10,8 @@
 void print_all(const char * const format, ...)
 {
 	va_list valist;
-
 	unsigned int i = 0, j, k = 0;
-
 	char *str;
-
 	const char t_arg[] = "cifs";
 
 	va_start(valist, format);
