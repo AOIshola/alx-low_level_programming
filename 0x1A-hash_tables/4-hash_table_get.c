@@ -21,12 +21,12 @@ char *hash_tables_get(const hash_table_t *ht, const char *key)
 		return (NULL);
 
 	idx = key_index((const unsigned char *) key, ht->size);
-	if (idx == NULL)
+	if (idx >= ht->size)
 		return (NULL);
 	nodePtr = ht->array[idx];
 
 	while (nodePtr && strcmp(nodePtr->key, key) != 0)
-		nodePtr = nodeptr->next;
+		nodePtr = nodePtr->next;
 
 	return ((nodePtr == NULL) ? NULL : nodePtr->value);
 }
