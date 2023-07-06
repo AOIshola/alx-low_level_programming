@@ -1,40 +1,26 @@
 #include "main.h"
 
 /**
- * binary_search - use binary search to find
- * square root of a number
+ * sqrt_check - function to find square root of a number
  * @n: number to find square root
- * @low: lowest number in search range
- * @high: highest number in search range
- *
+ * @i: number to test
  * Return: square root of number or -1
  * if n is less than 0 or has no natural sqrt
  */
-int binary_search(int n, int low, int high)
+int sqrt_check(int n, int i)
 {
-	if (n < 0)
+	if (i * i > n)
 	{
 		return (-1);
 	}
-	if (low <= high)
+	if (i * i == n)
 	{
-		int mid = (low + high) / 2;
-		int square = mid * mid;
-
-		if (square == n)
-		{
-			return (mid);
-		}
-		else if (square > n)
-		{
-			return (binary_search(n, low, mid - 1));
-		}
-		else
-		{
-			return (binary_search(n, mid + 1, high));
-		}
+		return (i);
 	}
-	return (-1);
+	else
+	{
+		return (sqrt_check(n, i + 1));
+	}
 }
 
 /**
@@ -46,5 +32,9 @@ int binary_search(int n, int low, int high)
 
 int _sqrt_recursion(int n)
 {
+	if (n == 0)
+	{
+		return (0);
+	}
 	return (binary_search(n, 0, n));
 }
