@@ -39,7 +39,7 @@ int prime_helper(int n, int i)
  * Return: 0 or 1 depending on the check
  */
 
-int _is_prime_number(int n)
+int is_prime_number(int n)
 {
 	int i = 2;
 
