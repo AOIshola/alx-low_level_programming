@@ -23,18 +23,18 @@ int binary_search(int n, int low, int high)
 
 		if (square == n)
 		{
-			return mid;
+			return (mid);
 		}
 		else if (square > n)
 		{
-			return binary_search(n, low, mid - 1);
+			return (binary_search(n, low, mid - 1));
 		}
 		else
 		{
-			return binary_search(n, mid + 1, high);
+			return (binary_search(n, mid + 1, high));
 		}
 	}
-	return -1;
+	return (-1);
 }
 
 /**
@@ -46,5 +46,5 @@ int binary_search(int n, int low, int high)
 
 int _sqrt_recursion(int n)
 {
-	return binary_search(n, 0, n);
+	return (binary_search(n, 0, n));
 }
