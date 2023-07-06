@@ -7,3 +7,4 @@ int _sqrt_recursion(int n);
 int binary_search(int n, int low, int high);
 int is_prime_number(int n);
 int prime_helper(int n, int i);
+int _putchar(char c);
