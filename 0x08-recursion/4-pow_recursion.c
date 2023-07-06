@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _pow_recursion: gets number x raised to power y
+ * _pow_recursion - gets number x raised to power y
  * @x: base number
  * @y: exponent
  *
