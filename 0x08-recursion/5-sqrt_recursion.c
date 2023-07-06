@@ -36,5 +36,5 @@ int _sqrt_recursion(int n)
 	{
 		return (0);
 	}
-	return (binary_search(n, 0, n));
+	return (sqrt_check(n, 1));
 }
