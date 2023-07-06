@@ -19,7 +19,7 @@ int binary_search(int n, int low, int high)
 	if (low <= high)
 	{
 		int mid = (low + high) / 2;
-		long long square =(long long) mid * mid;
+		int square = mid * mid;
 
 		if (square == n)
 		{
