@@ -29,7 +29,7 @@ int prime_helper(int n, int i)
 	{
 		return (1);
 	}
-	return prime_helper(n, i + 1);
+	return (prime_helper(n, i + 1));
 }
 
 /**
