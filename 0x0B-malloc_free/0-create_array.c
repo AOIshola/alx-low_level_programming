@@ -28,7 +28,7 @@ char *create_array(unsigned int size, char c)
 	}
 	else
 	{
-		int index = 0;
+		unsigned int index = 0;
 
 		while (index < size)
 		{
