@@ -32,12 +32,11 @@ unsigned int _strlen(char *str)
 
 char *str_concat(char *s1, char *s2)
 {
+	char *concat;
 	unsigned int size;
 	unsigned int i = 0;
 
 	size = _strlen(s1) + _strlen(s2) + 1;
-	char *concat;
-
 	concat = malloc(size * sizeof(char));
 
 	if (concat == NULL)
