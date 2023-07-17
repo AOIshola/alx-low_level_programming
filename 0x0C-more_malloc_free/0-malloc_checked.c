@@ -2,16 +2,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * malloc_checked - dynamically allocate memory
+ * @b: amount of memory to allocate
+ *
+ * Return: Nothing
+ */
+
 void *malloc_checked(unsigned int b)
 {
-    void *ptr;
+	void *ptr;
 
-    ptr = malloc(b);
+	ptr = malloc(b);
 
-    if (ptr == NULL)
-    {
-        exit(98);
-    }
+	if (ptr == NULL)
+	{
+		exit(98);
+	}
 
-    return (ptr);
+	return (ptr);
 }
