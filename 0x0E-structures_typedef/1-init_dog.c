@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "dog.h"
 
 /**
@@ -9,7 +10,7 @@
  * Return: Nothing
 */
 
-void init_dog(struct dog *d, char *name, float age, char *name)
+void init_dog(struct dog *d, char *name, float age, char *owner)
 {
 	if (d != NULL)
 	{
