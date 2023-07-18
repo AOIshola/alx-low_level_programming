@@ -6,8 +6,6 @@
  * @name: name of dog
  * @age: age of dog
  * @owner: owner of the dog
- * 
- * Description: definition of a dog type with only 3 elements
 */
 
 struct dog
