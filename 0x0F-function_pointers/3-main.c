@@ -33,7 +33,9 @@ int main(int argc, char *argv[])
 		return (99);
 	}
 
-	if ((argv[2] == '%' || argv[2] == '/') && num2 == 0)
+	op = *argv[2];
+
+	if ((op == '%' || op == '/') && num2 == 0)
 	{
 		printf("Error\n");
 		return (100);
