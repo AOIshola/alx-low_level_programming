@@ -18,16 +18,18 @@ int int_index(int *array, int size, int (*cmp)(int))
 	{
 		return (-1);
 	}
-
-	while (i < size)
+	
+	if (array != NULL || cmp != NULL)
 	{
-		search = (*cmp)(array[i]);
-
-		if (search != 0)
+		while (i < size)
 		{
-			return (i);
+			search = (*cmp)(array[i]);
+
+			if (search != 0)
+			{
+				return (i);
+			}
 		}
 	}
-
 	return (-1);
 }
