@@ -1,5 +1,5 @@
-#include <stdio>
-#include "3-calc.h"
+#include <stdio.h>
+#include "function_pointers.h"
 /**
  * print_name - prints name using function pointer
  * @name: pointer to string

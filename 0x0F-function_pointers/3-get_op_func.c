@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "3-calc.h"
+#include "function_pointers.h"
 
 /**
  * get_op_func - pointer to function that gets operator sign

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "function_pointers.h"
 
 /**
  * int_index - return the index of the first occurence of int
