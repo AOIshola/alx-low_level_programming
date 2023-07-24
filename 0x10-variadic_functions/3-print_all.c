@@ -19,7 +19,6 @@ void print_all(const char * const format, ...)
 	while (format[a])
 	{
 		b = 0;
-		c = 0;
 		while (args[b])
 		{
 			if (format[a] == args[b] && c)
