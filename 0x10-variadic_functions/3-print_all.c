@@ -26,8 +26,7 @@ void print_all(const char * const format, ...)
 			{
 				printf(", ");
 				break;
-			}
-			b++;
+			} b++;
 		}
 		switch (format[a])
 		{
@@ -43,12 +42,13 @@ void print_all(const char * const format, ...)
 			case 's':
 				str = va_arg(ptr, char *);
 				if (!str)
+				{
 					printf("(nil)");
+					break;
+				}
 				printf("%s", str);
 				break;
-		}
-		a++;
+		} a++;
 	}
-	printf("\n");
-	va_end(ptr);
+	printf("\n"), va_end(ptr);
 }
