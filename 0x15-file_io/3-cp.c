@@ -36,7 +36,7 @@ void check_close(ssize_t f_close, ssize_t file)
 {
 	if (f_close < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %ld\n", file);
 		exit(100);
 	}
 }
@@ -52,6 +52,7 @@ void check_close(ssize_t f_close, ssize_t file)
 int main(int argc, char *argv[])
 {
 	ssize_t f_from, f_to, rdf, wrt, f_close;
+	char buf[1024];
 
 	if (argc != 3)
 	{
@@ -62,15 +63,13 @@ int main(int argc, char *argv[])
 	f_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 00664);
 	check_error(f_from, f_to, argv);
 
-	char buf[1024];
-
 	rdf = read(f_from, buf, 1024);
 	check_error(rdf, 1, argv);
 	wrt = write(f_to, buf, rdf);
 	check_error(1, wrt, argv);
 
 	f_close = close(f_from);
-	check_close(fclose, f_from);
+	check_close(f_close, f_from);
 
 	f_close = close(f_to);
 	check_close(f_close, f_to);
