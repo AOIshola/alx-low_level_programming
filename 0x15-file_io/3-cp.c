@@ -34,7 +34,7 @@ void check_close(ssize_t f_close, ssize_t file)
 {
 	if (f_close < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %ld\n", file);
 		exit(100);
 	}
 }
