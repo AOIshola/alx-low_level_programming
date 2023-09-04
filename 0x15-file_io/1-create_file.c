@@ -27,7 +27,7 @@ int create_file(const char *filename, char *text_content)
 	}
 	i = 0;
 
-	buf = malloc(size_of(*text_content) * letters);
+	buf = malloc(size_of(*text_content) * length);
 	while (text_content[i] != '\0')
 	{
 		buf[i] = text_content[i];
