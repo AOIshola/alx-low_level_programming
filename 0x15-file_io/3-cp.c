@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
 	check_error(f_from, f_to, argv);
 
 	rdf = 1024;
-	while (rdf)
+	while (rdf == 1024)
 	{
 		rdf = read(f_from, buf, 1024);
 		check_error(rdf, 1, argv);
