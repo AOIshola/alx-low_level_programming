@@ -10,9 +10,9 @@
  * filename is NULL or write fails
 */
 
-ssize_t read_textfile(const char *filename, size_t letters);
+ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t fd, rdw, wrt;
+	ssize_t fd, rdw;
 	char *buf;
 
 	if (!filename || !letters)
