@@ -44,7 +44,7 @@ void check_close(ssize_t f_close, ssize_t file)
  * @argc: number of arguments
  * @argv: list of arguments
  *
- * Return: 0 on Sucess, exit on Error
+ * Return: 0 on Success, exit on Error 
 */
 int main(int argc, char *argv[])
 {
