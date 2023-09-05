@@ -18,7 +18,7 @@ void check_error(ssize_t f_from, ssize_t f_to, char *argv[])
 	}
 	if (f_to < 0)
 	{
-		dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't write to", argv[2]);
+		dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't write to file", argv[2]);
 		exit(99);
 	}
 }
