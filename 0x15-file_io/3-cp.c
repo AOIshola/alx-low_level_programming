@@ -13,12 +13,12 @@ void check_error(ssize_t f_from, ssize_t f_to, char *argv[])
 {
 	if (f_from < 0)
 	{
-		dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't read from", argv[1]);
+		dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't read from file", argv[1]);
 		exit(98);
 	}
 	if (f_to < 0)
 	{
-		dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't write to file", argv[2]);
+		dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't write to", argv[2]);
 		exit(99);
 	}
 }
