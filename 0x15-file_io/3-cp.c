@@ -57,11 +57,11 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	f_from = open(argv[1], O_RDONLY);
-	f_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
+	f_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 00664);
 	check_error(f_from, f_to, argv);
 
 	rdf = 1024;
-	while (rdf == 1024)
+	while (rdf)
 	{
 		rdf = read(f_from, buf, 1024);
 		check_error(rdf, 1, argv);
