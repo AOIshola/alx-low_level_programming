@@ -23,17 +23,18 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		currentPtr = currentPtr->next;
 		i++;
 	}
-	if (currentPtr == NULL)
-		return (-1);
-	/* remove at beginning */
-	if (prevPtr == NULL && currentPtr->prev == NULL)
+	if (prevPtr == NULL && currentPtr->next != NULL)
 	{
 		*head = currentPtr->next;
 		(*head)->prev = NULL;
 		free(currentPtr);
 		return (1);
 	}
-	/* remove in-between */
+	else if (prevPtr == NULL && currentPtr->next == NULL)
+	{
+		*head = NULL;
+		return (1);
+	}
 	if (prevPtr != NULL && currentPtr->next != NULL)
 	{
 		temp = currentPtr;
@@ -43,7 +44,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		free(temp);
 		return (1);
 	}
-	/* remove at end */
 	if (prevPtr != NULL && currentPtr->next == NULL)
 	{
 		prevPtr->next = NULL;
