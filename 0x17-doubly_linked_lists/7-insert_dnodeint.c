@@ -1,52 +1,47 @@
 #include "lists.h"
 
 /**
- * insert_dnodeint_at_index - inserts a node at a given index
- * @head: points to the first node
- * @idx: index to inset node
- * @n: integer in node
+ * insert_dnodeint_at_index - insert a node in a linked list
+ * @h: points to the first node
+ * @idx: the index to insert the node
+ * @n: integer in the new node
  *
- * Return: address of the new node
+ * Return: address of the new node on success,
+ * NULL on failure.
  */
 
-dlistint_t *insert_dnodeint_at_index(dlistint_t **head, unsigned int idx,
-		int n)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *prevPtr = NULL, *currentPtr = NULL, *newPtr = NULL;
-	unsigned int i = 0;
+	dlistint_t *newPtr = NULL, *currentPtr = *h;
+	unsigned int i = 1;
 
 	newPtr = malloc(sizeof(dlistint_t));
 	if (newPtr == NULL)
 		return (NULL);
 	newPtr->n = n;
-	if (*head == NULL)
+	if (*h == NULL)
 	{
-		*head = newPtr;
+		*h = newPtr;
 		newPtr->next = NULL;
 		newPtr->prev = NULL;
 		return (newPtr);
 	}
-	currentPtr = *head;
-	while (i < idx && currentPtr != NULL)
+	if (idx == 0)
+		add_dnodeint(h, n);
+	while (currentPtr != NULL)
 	{
-		prevPtr = currentPtr;
+		if (i == idx)
+		{
+			if (currentPtr->next == NULL)
+				return (add_dnodeint_end(h, n));
+			newPtr->next = currentPtr->next;
+			newPtr->prev = currentPtr;
+			currentPtr->next->prev = newPtr;
+			currentPtr->next = newPtr;
+			return (newPtr);
+		}
 		currentPtr = currentPtr->next;
 		i++;
 	}
-	if (prevPtr == NULL)
-		add_dnodeint(head, n);
-	else if (currentPtr != NULL)
-	{
-		newPtr->next = currentPtr;
-		newPtr->prev = prevPtr;
-		prevPtr->next = newPtr;
-		currentPtr->prev = newPtr;
-	}
-	if (currentPtr == NULL)
-	{
-		free(newPtr);
-		return (NULL);
-	}
-	else
-		return (newPtr);
+	return (NULL);
 }
