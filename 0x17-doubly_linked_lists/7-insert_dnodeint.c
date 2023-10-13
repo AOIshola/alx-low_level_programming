@@ -27,18 +27,17 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **head, unsigned int idx,
 		return (newPtr);
 	}
 	currentPtr = *head;
-	while (i < idx && currentPtr != NULL)
+	while (i < idx && currentPtr->next != NULL)
 	{
 		prevPtr = currentPtr;
 		currentPtr = currentPtr->next;
 		i++;
 	}
 	if (prevPtr == NULL)
+		add_dnodeint(head, n);
+	else if (currentPtr->next == NULL)
 	{
-		currentPtr->prev = newPtr;
-		newPtr->next = currentPtr;
-		newPtr->prev = NULL;
-		*head = newPtr;
+		add_dnodeint_end(head, n);
 	}
 	else if (currentPtr != NULL)
 	{
