@@ -26,6 +26,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **head, unsigned int idx,
 		newPtr->prev = NULL;
 		return (newPtr);
 	}
+	if (idx == 0)
+		return (add_dnodeint(head, n));
 	currentPtr = *head;
 	while (i < idx && currentPtr != NULL)
 	{
@@ -33,20 +35,16 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **head, unsigned int idx,
 		currentPtr = currentPtr->next;
 		i++;
 	}
-	if (prevPtr == NULL)
-		add_dnodeint(head, n);
-	else if (currentPtr != NULL)
+	if (currentPtr != NULL)
 	{
 		newPtr->next = currentPtr;
 		newPtr->prev = prevPtr;
 		prevPtr->next = newPtr;
 		currentPtr->prev = newPtr;
-	}
-	if (currentPtr == NULL)
-	{
-		free(newPtr);
-		return (NULL);
-	}
-	else
 		return (newPtr);
+	}
+	if (i == idx)
+		return (add_dnodeint_end(head, n));
+	free(newPtr);
+	return (NULL);
 }
