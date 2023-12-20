@@ -1,20 +1,12 @@
 CC = gcc
-CFLAGS = -Wall -Wextra
-
-TARGET = school
-
 SRCS = main.c school.c
 OBJS = $(SRCS:.c=.o)
+NAME = school
 
-.PHONY: all clean
+all: $(NAME)
 
-all: $(TARGET)
-
-$(TARGET): $(OBJS)
+$(NAME): $(OBJS)
 	$(CC) $(OBJS) -o $@
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-clean:
-	rm -f $(TARGET) $(OBJS)
+	$(CC) -c $< -o $@
