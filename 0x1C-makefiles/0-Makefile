@@ -1,8 +1,2 @@
-school: main.o school.o
-	cc main.o school.o -o school
-main.o: main.c
-	cc -c main.c
-school.o: school.c m.h
-	cc -c school.c
-clean:
-	rm *.o school
+school: main.o school.o m.h
+	gcc main.c school.c -o school
