@@ -36,6 +36,8 @@ int h_binary_search(int *array, size_t low, size_t high, int value)
 {
 	size_t mid = (low + high) / 2;
 
+	if (!array)
+		return (-1);
 	while (low <= high)
 	{
 		printSearch(array, low, high);
